@@ -1,18 +1,31 @@
 
 const router = require('express').Router();
-const {getAbout, addAbout, getAboutId, updateAbout, deleteAbout} = require('../controllers/aboutCtrl');
+//const {getAbout, addAbout, getAboutId, updateAbout, deleteAbout} = require('../controllers/aboutCtrl');
 
-
+const aboutSchema = require('../models/aboutModel');
 //.....................about...........
 
 //get about user
-router.get('/about', getAbout)
+router.get('/about', async (req, res)=>{
+
+    const about = await aboutSchema.find();
+    res.json(about);
+})
 
 
 
 
 //add about user
-router.post('/about', addAbout)
+router.post('/about', async (req, res)=>{
+
+    const { about } = req.body;
+    const newAbout = await AboutSchema({
+
+        about
+    })
+    await newAbout.save();
+    res.json(newAbout);
+})
 
 
 
