@@ -7,18 +7,27 @@ const cors = require('cors');
 
 
 const app = express();
-
+const PORT = process.env.PORT || 3001;
 //middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 //routes
 app.use('/', require('./routes/aboutRoute'));
 
 
-PORT = process.env.PORT || 5000;
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/sportfolioss',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      
+    }
+  );
+   mongoose.set('debug', true);
+   app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
+       
 
-app.listen(PORT, ()=>{
-    console.log(`server listening of port:${PORT}`);
-})
+
