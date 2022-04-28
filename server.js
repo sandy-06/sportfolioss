@@ -16,7 +16,8 @@ app.use(express.static('public'));
 
 //routes
 app.use('/', require('./routes/aboutRoute'));
-
+app.use('/', require('./routes/educRoute'));
+app.use('/', require('./routes/experienceRoute'));
 
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost:27017/sportfolioss',
