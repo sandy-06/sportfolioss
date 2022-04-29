@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 //routes
+app.use('/user', require('./routes/userRoute'));
 app.use('/', require('./routes/aboutRoute'));
 app.use('/', require('./routes/educRoute'));
 app.use('/', require('./routes/experienceRoute'));
