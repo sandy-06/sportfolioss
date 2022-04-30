@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const fileUpLoad = require(express-fileUpLoad)
-
+//const fileUpLoad = require(express-fileupLoad);
+const path = require('path');
 
 
 const app = express();
@@ -16,6 +16,7 @@ app.use(express.static('public'));
 
 //routes
 app.use('/user', require('./routes/userRoute'));
+app.use('/', require('./routes/projectRoute'));
 app.use('/', require('./routes/aboutRoute'));
 app.use('/', require('./routes/educRoute'));
 app.use('/', require('./routes/experienceRoute'));
