@@ -55,7 +55,7 @@ exports.updateExperience = async (req, res) => {
     const { experience} = req.body;
 
     try {
-        const newExperience = await expeienceSchema.findByIdAndUpdate(req.params.id, {
+        const newExperience = await experienceSchema.findByIdAndUpdate(req.params.id, {
 
             experience
 
