@@ -20,7 +20,7 @@ app.use(fileUpload({
 }))
 
 //routes
-app.use('/contact', require('./routes/contactRoutes'))
+app.use('/contact', require('./routes/contactRoute'))
 app.use('/user', require('./routes/userRoute'));
 app.use('/', require('./routes/projectRoute'));
 app.use('/', require('./routes/aboutRoute'));
