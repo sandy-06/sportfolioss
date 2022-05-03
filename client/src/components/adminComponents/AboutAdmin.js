@@ -1,10 +1,15 @@
-import React,{useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+
 
 const AboutAdmin = () => {
-
+    return (
+        <div>
+            Hello from about admin
+        </div>
+    )
 }
+
+
 
 
 

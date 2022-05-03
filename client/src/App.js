@@ -23,7 +23,8 @@ import EditProjects from './components/editComponents/EditProjects';
 import EditSkills from './components/editComponents/EditSkills';
 
 import {Route} from 'react-router-dom';
-import {Element} from 'react-scroll';
+//import {Element} from 'react-scroll';
+import Register from './components/Homepages/Register';
 
 
 
@@ -31,11 +32,62 @@ import {Element} from 'react-scroll';
 
 function App() {
 
-
-
   return (
     <div className="App">
-      dfdd
+     {/* navbar*/ }
+     <Navbar />
+
+     <Route exact path="/" component={Header}/>
+     <Route exact path="/" component={About}/>
+     <Route exact path="/" component={Education}/>
+     <Route exact path="/" component={Certificate}/>
+     <Route exact path="/" component={Contact}/>
+     <Route exact path="/" component={Experience}/>
+     <Route exact path="/" component={Projects}/>
+     <Route exact path="/" component={Skill}/>
+     
+    
+     
+     <Route exact path="/login" component={Login}/>
+     <Route exact path="/admin" component={Admin}/>
+
+
+     <Route exact path="/editEducation/:id" component={EditEducation}/>
+     <Route exact path="/editExperience/:id" component={EditExperience}/>
+     <Route exact path="/editAbout/:id" component={EditAbout}/>
+     <Route exact path="/editProjects/:id" component={EditProjects}/>
+     <Route exact path="/editCertificate/:id" component={EditCertificate}/>
+     <Route exact path="/editSkills/:id" component={EditSkills}/>
+
+
+     <Route component={Footer}/>
+
+    
+     
+     <Footer/>
+     
+     
+    
+     <Register/>
+
+
+
+     <Admin/>
+
+     <EditAbout/>
+     <EditCertificate/>
+     <EditEducation/>
+     <EditExperience/>
+     <EditProjects/>
+     <EditSkills/>
+
+
+
+
+
+
+
+
     </div>
   );
 }
