@@ -27,6 +27,9 @@ app.use('/', require('./routes/aboutRoute'));
 app.use('/', require('./routes/educRoute'));
 app.use('/', require('./routes/experienceRoute'));
 app.use('/', require('./routes/upload'));
+app.use('/', require('./routes/certificationRoute'));
+app.use('/', require('./routes/skillRoute'));
+
 
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost:27017/sportfolioss',
